@@ -3,18 +3,18 @@
     "userId": 1,
     "id": 1,
     "title": "SERAPHIM GUNDAM",
-    "body": "Mobile Suit Gundam 00"
+    "series": "Mobile Suit Gundam 00"
   },
   {
     "userId": 1,
     "id": 2,
     "title": "GUNDAM KYRIOS",
-    "body": "Mobile Suit Gundam 00"
+    "series": "Mobile Suit Gundam 00"
   },
    {
     "userId": 1,
     "id": 3,
     "title": "GUNDAM EXIA",
-    "body": "Mobile Suit Gundam 00"
+    "series": "Mobile Suit Gundam 00"
   }
 ]
