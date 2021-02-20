@@ -16,7 +16,7 @@ class HomePageState extends State<HomePage> {
   List data;
 
   Future<String> getData() async {
-    var response = await http.get(Uri.encodeFull("https://jsonplaceholder.typicode.com/posts"), headers: {
+    var response = await http.get(Uri.encodeFull("https://raw.githubusercontent.com/randycarrero/GunplaJsonbase/master/data/model.json"), headers: {
       "Accept": "application/json"
     });
 
@@ -38,6 +38,41 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(title: new Text("Listviews"), backgroundColor: Colors.blue),
+      drawer: Drawer(
+        // Add a ListView to the drawer. This ensures the user can scroll
+        // through the options in the drawer if there isn't enough vertical
+        // space to fit everything.
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('series'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Categories'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
       body: new ListView.builder(
         itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext context, int index) {
@@ -63,7 +98,7 @@ class HomePageState extends State<HomePage> {
                     margin: EdgeInsets.only(left: 15.0),
                     constraints: BoxConstraints(minWidth: 100, maxWidth: 300),
                     child: Text(
-                      data[index]["body"],
+                      data[index]["series"],
                       style: new TextStyle(fontSize: 14.0, color: const Color(0xFF2d2424), fontWeight: FontWeight.w300, fontFamily: "Roboto"),
                       maxLines: 4,
                     ))
