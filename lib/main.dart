@@ -47,7 +47,7 @@ class HomePageState extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('Drawer Header'),
+              child: Text('Gunpla Database'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
