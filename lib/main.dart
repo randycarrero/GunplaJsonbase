@@ -37,7 +37,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(title: new Text("Listviews"), backgroundColor: Colors.blue),
+      appBar: new AppBar(title: new Text("Gunpla Database"), backgroundColor: Colors.blue),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
