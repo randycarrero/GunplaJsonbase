@@ -31,6 +31,11 @@ class HomePageState extends State<HomePage> {
   }
 
   @override
+  void initState() {
+    this.getData();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
@@ -100,7 +105,7 @@ class HomePageState extends State<HomePage> {
                                     fontSize: 16.0,
                                     color: const Color(0xFF000000),
                                     fontWeight: FontWeight.w500,
-                                    fontFamily: ""),
+                                    fontFamily: "Roboto"),
                                 maxLines: 1,
                               ))
                         ]),
@@ -112,9 +117,10 @@ class HomePageState extends State<HomePage> {
                         child: Text(
                           data[index]["series"],
                           style: new TextStyle(
-                            fontSize: 14.0,
-                            color: const Color(0xFF2d2424),
-                          ),
+                              fontSize: 14.0,
+                              color: const Color(0xFF2d2424),
+                              fontWeight: FontWeight.w300,
+                              fontFamily: "Roboto"),
                           maxLines: 4,
                         ))
                   ]),
