@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(new MaterialApp(home: new HomePage()));
@@ -41,41 +40,6 @@ class HomePageState extends State<HomePage> {
     return new Scaffold(
       appBar: new AppBar(
           title: new Text("Gunpla Database"), backgroundColor: Colors.blue),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Gunpla Database'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text('series'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Text('Categories'),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
       body: new ListView.builder(
         itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext context, int index) {
@@ -102,11 +66,6 @@ class HomePageState extends State<HomePage> {
                                   BoxConstraints(minWidth: 100, maxWidth: 300),
                               child: Text(
                                 data[index]["title"],
-                                style: new TextStyle(
-                                    fontSize: 16.0,
-                                    color: const Color(0xFF000000),
-                                    fontWeight: FontWeight.w500,
-                                    fontFamily: "Roboto"),
                                 maxLines: 1,
                               ))
                         ]),
@@ -117,11 +76,6 @@ class HomePageState extends State<HomePage> {
                             BoxConstraints(minWidth: 100, maxWidth: 300),
                         child: Text(
                           data[index]["series"],
-                          style: new TextStyle(
-                              fontSize: 14.0,
-                              color: const Color(0xFF2d2424),
-                              fontWeight: FontWeight.w300,
-                              fontFamily: "Roboto"),
                           maxLines: 4,
                         ))
                   ]),
