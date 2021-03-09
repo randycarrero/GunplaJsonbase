@@ -25,7 +25,7 @@ class HomePageState extends State<HomePage> {
       data = json.decode(response.body);
     });
 
-    print(data[1]["name"]);
+    print(data[1]["title"]);
 
     return "Success!";
   }
@@ -66,7 +66,7 @@ class HomePageState extends State<HomePage> {
                               constraints:
                                   BoxConstraints(minWidth: 100, maxWidth: 300),
                               child: Text(
-                                data[index]["name"],
+                                data[index]["title"],
                                 maxLines: 1,
                               ))
                         ]),
