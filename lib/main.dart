@@ -18,19 +18,20 @@ class HomePageState extends State<HomePage> {
   Future<String> getData() async {
     var response = await http.get(
         Uri.encodeFull(
-            "https://raw.githubusercontent.com/randycarrero/GunplaJsonbase/master/data/model.json"),
+            "https://raw.githubusercontent.com/randycarrero/gunplajson/main/model.json"),
         headers: {"Accept": "application/json"});
 
     this.setState(() {
       data = json.decode(response.body);
     });
 
-    print(data[1]["title"]);
+    print(data[1]["name"]);
 
     return "Success!";
   }
 
   @override
+  // ignore: must_call_super
   void initState() {
     this.getData();
   }
@@ -65,7 +66,7 @@ class HomePageState extends State<HomePage> {
                               constraints:
                                   BoxConstraints(minWidth: 100, maxWidth: 300),
                               child: Text(
-                                data[index]["title"],
+                                data[index]["name"],
                                 maxLines: 1,
                               ))
                         ]),
